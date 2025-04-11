@@ -6,80 +6,129 @@
   <title>PT Indo Apexion Global</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @keyframes fade-in-up {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    html {
+      scroll-behavior: smooth;
     }
-
-    .animate-fade-in-up {
-      animation: fade-in-up 1s ease-out forwards;
+    .popup-overlay {
+      background-color: rgba(0, 0, 0, 0.6);
     }
-
-    .fade-delay-1 { animation-delay: 0.2s; }
-    .fade-delay-2 { animation-delay: 0.4s; }
-    .fade-delay-3 { animation-delay: 0.6s; }
-    .fade-delay-4 { animation-delay: 0.8s; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 scroll-smooth">
+<body class="font-sans text-gray-800">
 
-  <!-- Hero Section -->
-  <section class="bg-cover bg-center h-screen flex items-center justify-center relative" style="background-image: url('https://images.unsplash.com/photo-1582735689202-c1bff7f6f8c0');">
-    <div class="bg-black bg-opacity-60 absolute inset-0"></div>
-    <div class="relative z-10 text-center text-white max-w-2xl px-6 animate-fade-in-up">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Mitra Global Anda untuk Briket Arang Berkualitas</h1>
-      <p class="text-lg md:text-xl">PT Indo Apexion Global — Menyediakan solusi ekspor arang yang ramah lingkungan dan terpercaya.</p>
+<!-- Hero Section -->
+<section id="hero" class="min-h-screen bg-cover bg-center flex items-center justify-center text-white text-center px-4"
+         style="background-image: url('https://charcoalin.com/wp-content/uploads/2022/10/Gallery-3-1024x576.jpg');">
+  <div class="bg-black bg-opacity-50 p-10 rounded-xl">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">Selamat Datang di PT Indo Apexion Global</h1>
+    <p class="text-lg md:text-xl">Eksportir Arang Briket Berkualitas Tinggi</p>
+  </div>
+
+  <!-- Navigasi Gambar Interaktif -->
+  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-6 mb-6">
+    <!-- Profil -->
+    <div class="text-center group cursor-pointer" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-16 mx-auto transition-transform duration-300 group-hover:scale-110" />
+      <p class="text-white mt-2">Profil</p>
     </div>
-  </section>
-
-  <!-- About Us -->
-  <section class="py-16 px-6 md:px-24 bg-white">
-    <h2 class="text-3xl font-bold text-center mb-6 animate-fade-in-up fade-delay-1">Tentang Kami</h2>
-    <p class="text-center max-w-3xl mx-auto text-lg leading-relaxed animate-fade-in-up fade-delay-2">
-      PT Indo Apexion Global adalah perusahaan yang bergerak di bidang ekspor briket arang berkualitas tinggi. Kami berdedikasi untuk memberikan produk terbaik yang ramah lingkungan dan mendukung keberlanjutan global. Dengan jaringan mitra terpercaya, kami memastikan kepuasan pelanggan internasional.
-    </p>
-  </section>
-
-  <!-- Vision & Mission -->
-  <section class="py-16 px-6 md:px-24 bg-gray-100">
-    <div class="text-center mb-10 animate-fade-in-up fade-delay-1">
-      <h2 class="text-3xl font-bold mb-4">Visi & Misi</h2>
+    <!-- Produk -->
+    <div class="text-center group cursor-pointer" onclick="document.getElementById('produk').scrollIntoView({ behavior: 'smooth' })">
+      <img src="https://cdn-icons-png.flaticon.com/512/1042/1042331.png" class="w-16 mx-auto transition-transform duration-300 group-hover:scale-110" />
+      <p class="text-white mt-2">Produk</p>
     </div>
-    <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-      <div class="bg-white p-6 rounded-xl shadow-md animate-fade-in-up fade-delay-2">
-        <h3 class="text-xl font-semibold mb-2">Visi Kami</h3>
-        <p>Mewujudkan PT Indo Apexion Global sebagai perusahaan ekspor briket arang terdepan yang mendukung keberlanjutan dan inovasi energi alternatif di pasar global.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-md animate-fade-in-up fade-delay-3">
-        <h3 class="text-xl font-semibold mb-2">Misi Kami</h3>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Menyediakan produk berkualitas tinggi dan ramah lingkungan.</li>
-          <li>Menjalin kemitraan jangka panjang yang saling menguntungkan.</li>
-          <li>Menjaga konsistensi pelayanan dan pengiriman tepat waktu.</li>
-        </ul>
-      </div>
+    <!-- Sertifikat -->
+    <div class="text-center group cursor-pointer" onclick="document.getElementById('sertifikat').scrollIntoView({ behavior: 'smooth' })">
+      <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" class="w-16 mx-auto transition-transform duration-300 group-hover:scale-110" />
+      <p class="text-white mt-2">Sertifikat</p>
     </div>
-  </section>
+    <!-- Partnership -->
+    <div class="text-center group cursor-pointer" onclick="document.getElementById('partnership').scrollIntoView({ behavior: 'smooth' })">
+      <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" class="w-16 mx-auto transition-transform duration-300 group-hover:scale-110" />
+      <p class="text-white mt-2">Kemitraan</p>
+    </div>
+  </div>
+</section>
 
- <!-- Partnerships -->
+<!-- About Us -->
+<section id="about" class="py-16 px-6 md:px-24 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center mb-6 animate-fade-in-up fade-delay-1">Tentang Kami</h2>
+  <p class="text-center max-w-3xl mx-auto text-lg leading-relaxed animate-fade-in-up fade-delay-2">
+    PT Indo Apexion Global adalah perusahaan yang berdedikasi dalam menyediakan arang briket berkualitas tinggi yang ramah lingkungan untuk kebutuhan ekspor global. Kami menjunjung tinggi prinsip keberlanjutan dan kemitraan yang saling menguntungkan.
+  </p>
+</section>
+
+<!-- Visi & Misi -->
 <section class="py-16 px-6 md:px-24 bg-white">
-    <h2 class="text-3xl font-bold text-center mb-6 animate-fade-in-up fade-delay-1">Kemitraan Kami</h2>
-    <p class="text-center max-w-3xl mx-auto text-lg leading-relaxed mb-10 animate-fade-in-up fade-delay-2">
-      Kami percaya bahwa kolaborasi adalah kunci sukses jangka panjang. Dengan menjalin hubungan yang kuat dengan mitra lokal dan internasional, kami mampu menjaga kualitas dan kontinuitas pasokan produk kami.
-    </p>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center max-w-4xl mx-auto">
-      <img src="https://cdn-icons-png.flaticon.com/512/711/711769.png" alt="Partner 1" class="h-16 mx-auto grayscale hover:grayscale-0 transition duration-300 animate-fade-in-up fade-delay-1" />
-      <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Partner 2" class="h-16 mx-auto grayscale hover:grayscale-0 transition duration-300 animate-fade-in-up fade-delay-2" />
-      <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Partner 3" class="h-16 mx-auto grayscale hover:grayscale-0 transition duration-300 animate-fade-in-up fade-delay-3" />
-      <img src="https://cdn-icons-png.flaticon.com/512/2909/2909736.png" alt="Partner 4" class="h-16 mx-auto grayscale hover:grayscale-0 transition duration-300 animate-fade-in-up fade-delay-4" />
+  <h2 class="text-3xl font-bold text-center mb-6 animate-fade-in-up">Visi & Misi</h2>
+  <div class="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed">
+    <div class="animate-fade-in-up fade-delay-1">
+      <strong>Visi:</strong>
+      <br>Mewujudkan PT Indo Apexion Global sebagai perusahaan ekspor briket arang terdepan yang mendukung keberlanjutan dan inovasi energi alternatif di pasar global.
+    
     </div>
-  </section>
-  
+    <div class="animate-fade-in-up fade-delay-2">
+      <strong>Misi:</strong>
+      <ul class="list-disc list-inside mt-2">
+        <li>Menyediakan produk berkualitas tinggi yang ramah lingkungan.</li>
+        <li>Menjalin hubungan yang kuat dengan mitra bisnis lokal dan internasional.</li>
+        <li>Mendukung praktek produksi berkelanjutan dan tanggung jawab sosial.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 text-center">
-    <p>&copy; 2025 PT Indo Apexion Global. Seluruh hak cipta dilindungi.</p>
-  </footer>
+<!-- Produk -->
+<section id="produk" class="py-16 px-6 md:px-24 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center mb-6 animate-fade-in-up">Produk Kami</h2>
+  <p class="text-center max-w-3xl mx-auto mb-8 text-lg animate-fade-in-up fade-delay-1">
+    Kami memproduksi briket arang berbahan dasar tempurung kelapa yang memiliki kualitas tinggi, daya tahan panas luar biasa, dan ramah lingkungan.
+  </p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition transform duration-300">
+      <h3 class="font-bold text-xl mb-2">Hexagonal Briquettes</h3>
+      <p>Kuat, tahan lama, cocok untuk grill dan shisha.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition transform duration-300">
+      <h3 class="font-bold text-xl mb-2">Coconut Shell Briquettes</h3>
+      <p>Dibuat dari 100% tempurung kelapa, bebas bahan kimia.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition transform duration-300">
+      <h3 class="font-bold text-xl mb-2">Custom Shape Briket</h3>
+      <p>Bentuk sesuai permintaan untuk kebutuhan bisnis Anda.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Sertifikat -->
+<section id="sertifikat" class="py-16 px-6 md:px-24 bg-white">
+  <h2 class="text-3xl font-bold text-center mb-6 animate-fade-in-up">Sertifikat</h2>
+  <p class="text-center mb-6 text-lg animate-fade-in-up fade-delay-1">Kami memiliki sertifikasi kualitas dan keberlanjutan internasional.</p>
+  <div class="text-center">
+    <button onclick="document.getElementById('popup').classList.remove('hidden')" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Lihat Sertifikat</button>
+  </div>
+
+  <!-- Pop Up -->
+  <div id="popup" class="fixed inset-0 z-50 hidden flex items-center justify-center popup-overlay">
+    <div class="bg-white p-6 rounded-lg shadow-lg relative max-w-lg w-full">
+      <button onclick="document.getElementById('popup').classList.add('hidden')" class="absolute top-2 right-2 text-gray-700 text-xl">&times;</button>
+      <img src="https://via.placeholder.com/500x300?text=Contoh+Sertifikat" alt="Sertifikat" class="w-full" />
+    </div>
+  </div>
+</section>
+
+<!-- Partnership -->
+<section id="partnership" class="py-16 px-6 md:px-24 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center mb-6 animate-fade-in-up">Partnerships</h2>
+  <p class="text-center mb-10 text-lg animate-fade-in-up fade-delay-1"> Kami percaya bahwa kolaborasi adalah kunci sukses jangka panjang. Dengan menjalin hubungan yang kuat dengan mitra lokal dan internasional, kami mampu menjaga kualitas dan kontinuitas pasokan produk kami.
+   </p>
+</section>
+
+<!-- Tombol ke Atas -->
+<a href="#home" class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition duration-300">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+  </svg>
+</a>
 
 </body>
 </html>
