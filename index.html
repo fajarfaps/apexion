@@ -81,8 +81,55 @@
 <section id="produk" class="py-16 px-6 md:px-24 bg-gray-50">
   <h2 class="text-3xl font-bold text-center mb-6 animate-fade-in-up">Produk Kami</h2>
   <p class="text-center max-w-3xl mx-auto mb-8 text-lg animate-fade-in-up fade-delay-1">
+<!-- Slider Gambar Produk -->
+<div class="relative max-w-4xl mx-auto mb-10 overflow-hidden rounded-xl shadow-lg">
+  <!-- Tombol Navigasi -->
+  <button id="prevBtn" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full shadow hover:bg-white z-10">
+    &#8592;
+  </button>
+  <button id="nextBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full shadow hover:bg-white z-10">
+    &#8594;
+  </button>
+
+  <!-- Container Slide -->
+  <div class="overflow-hidden w-full h-[250px] md:h-[400px]">
+    <div id="slider" class="flex transition-transform duration-700 ease-in-out">
+      <img src="assets/slide1.jpeg" class="w-full object-cover h-full flex-shrink-0" />
+      <img src="assets/slide2.jpg" class="w-full object-cover h-full flex-shrink-0" />
+      <img src="assets/slide3.jpg" class="w-full object-cover h-full flex-shrink-0" />
+      <img src="assets/slide4.jpg" class="w-full object-cover h-full flex-shrink-0" />
+    </div>
+  </div>
+</div>
+
+<script>
+  const slider = document.getElementById("slider");
+  const slides = slider.querySelectorAll("img");
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+
+  function updateSlide() {
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlide();
+  });
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlide();
+  });
+</script>
+<!-- Deskripsi Produk -->
+<div class="max-w-3xl mx-auto text-center px-4 mt-6 mb-10">
+  <p class="text-gray-700 text-lg leading-relaxed">
     Kami memproduksi briket arang berbahan dasar tempurung kelapa yang memiliki kualitas tinggi, daya tahan panas luar biasa, dan ramah lingkungan.
   </p>
+</div>
+
+   </p>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
     <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition transform duration-300">
       <h3 class="font-bold text-xl mb-2">Hexagonal Briquettes</h3>
@@ -111,7 +158,7 @@
   <div id="popup" class="fixed inset-0 z-50 hidden flex items-center justify-center popup-overlay">
     <div class="bg-white p-6 rounded-lg shadow-lg relative max-w-lg w-full">
       <button onclick="document.getElementById('popup').classList.add('hidden')" class="absolute top-2 right-2 text-gray-700 text-xl">&times;</button>
-      <img src="https://via.placeholder.com/500x300?text=Contoh+Sertifikat" alt="Sertifikat" class="w-full" />
+      <img src="assets/slide1.jpeg" alt="Sertifikat" class="w-full" />
     </div>
   </div>
 </section>
@@ -144,11 +191,11 @@
     <h2 class="font-semibold text-gray-800 mb-2">Hubungi Kami</h2>
     <p class="text-gray-700">
       <strong>Prameswari Mahendrati</strong><br>
-      <a href="https://wa.me/085714625117" target="_blank" class="text-green-600 hover:underline">WhatsApp</a>
+      <a href="https://wa.me/6285714625117" target="_blank" class="text-green-600 hover:underline">WhatsApp</a>
     </p>
     <p class="mt-2 text-gray-700">
       <strong>Fajar Pangestu Amandaru</strong><br>
-      <a href="https://wa.me/085218815720" target="_blank" class="text-green-600 hover:underline">WhatsApp</a>
+      <a href="https://wa.me/6285218815720" target="_blank" class="text-green-600 hover:underline">WhatsApp</a>
     </p>
     <p class="mt-2 text-gray-700">
       <strong>Email:</strong><br>
@@ -166,6 +213,37 @@
       box.classList.toggle('hidden');
     }
   </script>
+<!-- FOOTER -->
+<footer class="bg-gradient-to-tr from-gray-100 to-gray-300 text-center text-gray-800 mt-16">
+  <div class="py-10 px-4 max-w-6xl mx-auto">
+    <!-- Icon Sosial Media -->
+    <div class="flex justify-center gap-4 mb-6 flex-wrap">
+      <!-- Gunakan logo yang sudah Mas Ming upload -->
+      <img src="img/logo-sosmed.png" alt="Facebook" class="w-6 h-6 hover:opacity-80 cursor-pointer">
+      <img src="img/logo-sosmed.png" alt="Instagram" class="w-6 h-6 hover:opacity-80 cursor-pointer">
+      <img src="img/logo-sosmed.png" alt="YouTube" class="w-6 h-6 hover:opacity-80 cursor-pointer">
+      <img src="img/logo-sosmed.png" alt="TikTok" class="w-6 h-6 hover:opacity-80 cursor-pointer">
+      <img src="img/logo-sosmed.png" alt="WhatsApp" class="w-6 h-6 hover:opacity-80 cursor-pointer">
+    </div>
+
+    <!-- Info Kontak PT -->
+    <div class="mb-4 text-sm sm:text-base">
+      <p class="font-semibold text-lg">PT Indo Apexion Global</p>
+      <p>Jl. Contoh Alamat No.123, Jakarta, Indonesia</p>
+      <p>Telepon: 021-12345678</p>
+      <p>Email: <a href="mailto:info@indoapexion.com" class="text-blue-600 hover:underline">info@indoapexion.com</a></p>
+    </div>
+
+    <!-- Garis Pemisah -->
+    <hr class="border-gray-300 my-4">
+
+    <!-- Copyright -->
+    <div class="text-sm text-gray-600 mt-4">
+      &copy; 2025 PT Indo Apexion Global. All rights reserved.
+    </div>
+  </div>
+</footer>
+
   
 
 </body>
